@@ -1,0 +1,322 @@
+[{
+    "id": 1,
+    "categoryId": 2,
+    "title": "Fernet",
+    "description": "Amargo italiano con sabor único de hierbas y especias.",
+    "price": 3200,
+    "discountPercentage": 10,
+    "rating": 9.5,
+    "stock": 123,
+    "brand": "Branca",
+    "backgroundColor": "#627264",
+    "thumbnail": "https://firebasestorage.googleapis.com/v0/b/solobebidasapp.appspot.com/o/FERNET.png?alt=media&token=14401fd9-d45d-4a21-8d2d-4028ec696061",
+    "images": [
+      "https://firebasestorage.googleapis.com/v0/b/solobebidasapp.appspot.com/o/FERNET.png?alt=media&token=14401fd9-d45d-4a21-8d2d-4028ec696061"
+    ]
+  },
+  {
+    "id": 2,
+    "categoryId": 2,
+    "title": "Gancia",
+    "description": "El aperitivo italiano mas refrescante.",
+    "price": 1249,
+    "discountPercentage": 6.2,
+    "rating": 6.8,
+    "stock": 53,
+    "brand": "Gancia",
+    "backgroundColor": "#627264",
+    "thumbnail": "https://firebasestorage.googleapis.com/v0/b/solobebidasapp.appspot.com/o/GANCIA.png?alt=media&token=091d6522-6321-41dd-b3d9-e8734afdb9d0",
+    "images": [
+      "https://firebasestorage.googleapis.com/v0/b/solobebidasapp.appspot.com/o/GANCIA.png?alt=media&token=091d6522-6321-41dd-b3d9-e8734afdb9d0"
+    ]
+  },
+  {
+    "id": 3,
+    "categoryId": 2,
+    "title": "Cynar",
+    "description": "",
+    "price": 1430,
+    "discountPercentage": 4.3,
+    "rating": 6.9,
+    "stock": 123,
+    "brand": "Cynar",
+    "backgroundColor": "#627264",
+    "thumbnail": "https://firebasestorage.googleapis.com/v0/b/solobebidasapp.appspot.com/o/CYNAR.png?alt=media&token=fe3376f4-bcf7-4a26-a9a9-07b1ff736631",
+    "images": [
+      "https://firebasestorage.googleapis.com/v0/b/solobebidasapp.appspot.com/o/CYNAR.png?alt=media&token=fe3376f4-bcf7-4a26-a9a9-07b1ff736631"
+    ]
+  },
+  {
+    "id": 4,
+    "categoryId": 2,
+    "title": "Cinzano",
+    "description": "",
+    "price": 987,
+    "discountPercentage": 4.2,
+    "rating": 6.8,
+    "stock": 67,
+    "brand": "Cinzano",
+    "backgroundColor": "#627264",
+    "thumbnail": "https://firebasestorage.googleapis.com/v0/b/solobebidasapp.appspot.com/o/CINZANO.png?alt=media&token=33ea95df-b76c-42d2-acf4-e36029b3d171",
+    "images": [
+      "https://firebasestorage.googleapis.com/v0/b/solobebidasapp.appspot.com/o/CINZANO.png?alt=media&token=33ea95df-b76c-42d2-acf4-e36029b3d171"
+    ]
+  },
+  {
+    "id": 5,
+    "categoryId": 2,
+    "title": "Aperol",
+    "description": "",
+    "price": 1749,
+    "discountPercentage": 5.2,
+    "rating": 9.8,
+    "stock": 14,
+    "brand": "Aperol",
+    "backgroundColor": "#627264",
+    "thumbnail": "https://firebasestorage.googleapis.com/v0/b/solobebidasapp.appspot.com/o/APEROL.png?alt=media&token=e035c6ea-4f0a-4146-8f0c-a68c201bae0e",
+    "images": [
+      "https://firebasestorage.googleapis.com/v0/b/solobebidasapp.appspot.com/o/APEROL.png?alt=media&token=e035c6ea-4f0a-4146-8f0c-a68c201bae0e"
+    ]
+  },
+  {
+    "id": 6,
+    "categoryId": 4,
+    "title": "Beefeater",
+    "description": "",
+    "price": 1645,
+    "discountPercentage": 8.2,
+    "rating": 3.8,
+    "stock": 87,
+    "brand": "Beefeater",
+    "backgroundColor": "#995D81",
+    "thumbnail": "https://firebasestorage.googleapis.com/v0/b/solobebidasapp.appspot.com/o/BEEFEATER.png?alt=media&token=2fb0b41e-68b4-4e4a-9cf6-c5032d7cd690",
+    "images": [
+      "https://firebasestorage.googleapis.com/v0/b/solobebidasapp.appspot.com/o/BEEFEATER.png?alt=media&token=2fb0b41e-68b4-4e4a-9cf6-c5032d7cd690"
+    ]
+  },
+  {
+    "id": 7,
+    "categoryId":4,
+    "title": "Bosque",
+    "description": "",
+    "price": 974,
+    "discountPercentage": 5.2,
+    "rating": 7.8,
+    "stock": 24,
+    "brand": "Bosque",
+    "backgroundColor": "#995D81",
+    "thumbnail": "https://firebasestorage.googleapis.com/v0/b/solobebidasapp.appspot.com/o/BOSQUE.png?alt=media&token=2cc34bec-319e-4abe-8e33-46721d50728c",
+    "images": [
+      "https://firebasestorage.googleapis.com/v0/b/solobebidasapp.appspot.com/o/BOSQUE.png?alt=media&token=2cc34bec-319e-4abe-8e33-46721d50728c"
+    ]
+  },
+  {
+    "id": 8,
+    "categoryId":4,
+    "title": "Malibu",
+    "description": "",
+    "price": 1965,
+    "discountPercentage": 2.2,
+    "rating": 1.8,
+    "stock": 523,
+    "brand": "Malibu",
+    "backgroundColor": "#995D81",
+    "thumbnail": "https://firebasestorage.googleapis.com/v0/b/solobebidasapp.appspot.com/o/MALIBU.png?alt=media&token=b1e6c9ec-2186-4947-9a0c-ef22e3b30f3d",
+    "images": [
+      "https://firebasestorage.googleapis.com/v0/b/solobebidasapp.appspot.com/o/MALIBU.png?alt=media&token=b1e6c9ec-2186-4947-9a0c-ef22e3b30f3d"
+    ]
+  },
+  {
+    "id": 9,
+    "categoryId":4,
+    "title": "Skyy",
+    "description": "",
+    "price": 1438,
+    "discountPercentage": 6.2,
+    "rating": 6.8,
+    "stock": 89,
+    "brand": "Skyy",
+    "backgroundColor": "#995D81",
+    "thumbnail": "https://firebasestorage.googleapis.com/v0/b/solobebidasapp.appspot.com/o/SKYY.png?alt=media&token=450e9e30-31e6-4edc-abb1-17420f2e1935",
+    "images": [
+      "https://firebasestorage.googleapis.com/v0/b/solobebidasapp.appspot.com/o/SKYY.png?alt=media&token=450e9e30-31e6-4edc-abb1-17420f2e1935"
+    ]
+  },
+  {
+    "id": 10,
+    "categoryId":4,
+    "title": "Smirnoff",
+    "description": "",
+    "price": 1549,
+    "discountPercentage": 8.2,
+    "rating": 8.8,
+    "stock": 153,
+    "brand": "Smirnoff",
+    "backgroundColor": "#995D81",
+    "thumbnail": "https://firebasestorage.googleapis.com/v0/b/solobebidasapp.appspot.com/o/SMIRNOFF.png?alt=media&token=a7dbe79d-ac0b-4496-9091-901fa6086dff",
+    "images": [
+      "https://firebasestorage.googleapis.com/v0/b/solobebidasapp.appspot.com/o/SMIRNOFF.png?alt=media&token=a7dbe79d-ac0b-4496-9091-901fa6086dff"
+    ]
+  },
+  {
+    "id": 11,
+    "categoryId": 1,
+    "title": "Andes",
+    "description": "",
+    "price": 549,
+    "discountPercentage": 1.2,
+    "rating": 9.8,
+    "stock": 513,
+    "brand": "Andes",
+    "backgroundColor": "#EFA506",
+    "thumbnail": "https://firebasestorage.googleapis.com/v0/b/solobebidasapp.appspot.com/o/ANDES.png?alt=media&token=7b853737-62d7-4a42-a839-d647dff925df",
+    "images": [
+      "https://firebasestorage.googleapis.com/v0/b/solobebidasapp.appspot.com/o/ANDES.png?alt=media&token=7b853737-62d7-4a42-a839-d647dff925df"
+    ]
+  },
+  {
+    "id": 12,
+    "categoryId": 1,
+    "title": "Corona",
+    "description": "",
+    "price": 769,
+    "discountPercentage": 16.2,
+    "rating": 7.8,
+    "stock": 73,
+    "brand": "Corona",
+    "backgroundColor": "#EFA506",
+    "thumbnail": "https://firebasestorage.googleapis.com/v0/b/solobebidasapp.appspot.com/o/CORONA.png?alt=media&token=ac9d8144-f93d-45a7-97f5-ceaea681ba35",
+    "images": [
+      "https://firebasestorage.googleapis.com/v0/b/solobebidasapp.appspot.com/o/CORONA.png?alt=media&token=ac9d8144-f93d-45a7-97f5-ceaea681ba35"
+    ]
+  },
+  {
+    "id": 13,
+    "categoryId": 1,
+    "title": "Quilmes",
+    "description": "",
+    "price": 437,
+    "discountPercentage": 56.2,
+    "rating": 0.8,
+    "stock": 123,
+    "brand": "Quilmes",
+    "backgroundColor": "#EFA506",
+    "thumbnail": "https://firebasestorage.googleapis.com/v0/b/solobebidasapp.appspot.com/o/QUILMES.png?alt=media&token=60dc4e5a-b311-49d5-87a0-425a30d760c0",
+    "images": [
+      "https://firebasestorage.googleapis.com/v0/b/solobebidasapp.appspot.com/o/QUILMES.png?alt=media&token=60dc4e5a-b311-49d5-87a0-425a30d760c0"
+    ]
+  },
+  {
+    "id": 14,
+    "categoryId": 1,
+    "title": "Budweiser",
+    "description": "",
+    "price": 497,
+    "discountPercentage": 50.2,
+    "rating": 0.8,
+    "stock": 12,
+    "brand": "Budweiser",
+    "backgroundColor": "#EFA506",
+    "thumbnail": "https://firebasestorage.googleapis.com/v0/b/solobebidasapp.appspot.com/o/BUDWEISER.png?alt=media&token=0da69a37-9e5a-439c-a32e-110c55079996",
+    "images": [
+      "https://firebasestorage.googleapis.com/v0/b/solobebidasapp.appspot.com/o/BUDWEISER.png?alt=media&token=0da69a37-9e5a-439c-a32e-110c55079996"
+    ]
+  },
+  {
+    "id": 15,
+    "categoryId": 1,
+    "title": "Patagonia",
+    "description": "",
+    "price": 437,
+    "discountPercentage": 56.2,
+    "rating": 0.8,
+    "stock": 123,
+    "brand": "Patagonia",
+    "backgroundColor": "#EFA506",
+    "thumbnail": "https://firebasestorage.googleapis.com/v0/b/solobebidasapp.appspot.com/o/PATAGONIA.png?alt=media&token=23ab7aca-ed0b-480c-814d-8298ef88bf4d",
+    "images": [
+      "https://firebasestorage.googleapis.com/v0/b/solobebidasapp.appspot.com/o/PATAGONIA.png?alt=media&token=23ab7aca-ed0b-480c-814d-8298ef88bf4d"
+    ]
+  },
+  {
+    "id": 16,
+    "categoryId": 3,
+    "title": "Pepsi",
+    "description": "",
+    "price": 437,
+    "discountPercentage": 56.2,
+    "rating": 0.8,
+    "stock": 123,
+    "brand": "Pepsi",
+    "backgroundColor": "#1F7A8C",
+    "thumbnail": "https://firebasestorage.googleapis.com/v0/b/solobebidasapp.appspot.com/o/PEPSI.png?alt=media&token=1c163a57-b2e6-43ac-9e17-3669a919be14",
+    "images": [
+      "https://firebasestorage.googleapis.com/v0/b/solobebidasapp.appspot.com/o/PEPSI.png?alt=media&token=1c163a57-b2e6-43ac-9e17-3669a919be14"
+    ]
+  },
+  {
+    "id": 17,
+    "categoryId": 3,
+    "title": "Paso de los toros",
+    "description": "",
+    "price": 437,
+    "discountPercentage": 56.2,
+    "rating": 0.8,
+    "stock": 123,
+    "brand": "Paso de los toros",
+    "backgroundColor": "#1F7A8C",
+    "thumbnail": "https://firebasestorage.googleapis.com/v0/b/solobebidasapp.appspot.com/o/PASODELOSTOROS.png?alt=media&token=06eaaaa8-0ebf-40a1-9332-3a67116f2f47",
+    "images": [
+      "https://firebasestorage.googleapis.com/v0/b/solobebidasapp.appspot.com/o/PASODELOSTOROS.png?alt=media&token=06eaaaa8-0ebf-40a1-9332-3a67116f2f47"
+    ]
+  },
+  {
+    "id": 18,
+    "categoryId": 3,
+    "title": "Mirinda",
+    "description": "",
+    "price": 437,
+    "discountPercentage": 56.2,
+    "rating": 0.8,
+    "stock": 123,
+    "brand": "Mirinda",
+    "backgroundColor": "#1F7A8C",
+    "thumbnail": "https://firebasestorage.googleapis.com/v0/b/solobebidasapp.appspot.com/o/MIRINDA.png?alt=media&token=93e60d60-4d71-478d-a4c8-8ed87047fe22",
+    "images": [
+      "https://firebasestorage.googleapis.com/v0/b/solobebidasapp.appspot.com/o/MIRINDA.png?alt=media&token=93e60d60-4d71-478d-a4c8-8ed87047fe22"
+    ]
+  },
+  {
+    "id": 19,
+    "categoryId": 3,
+    "title": "H2O",
+    "description": "",
+    "price": 437,
+    "discountPercentage": 56.2,
+    "rating": 0.8,
+    "stock": 123,
+    "brand": "H2O",
+    "backgroundColor": "#1F7A8C",
+    "thumbnail": "https://firebasestorage.googleapis.com/v0/b/solobebidasapp.appspot.com/o/H2O.png?alt=media&token=22b8f806-f0f0-4fbc-b0fd-b0b865910c1c",
+    "images": [
+      "https://firebasestorage.googleapis.com/v0/b/solobebidasapp.appspot.com/o/H2O.png?alt=media&token=22b8f806-f0f0-4fbc-b0fd-b0b865910c1c"
+    ]
+  },
+  {
+    "id": 20,
+    "categoryId": 3,
+    "title": "7UP",
+    "description": "",
+    "price": 437,
+    "discountPercentage": 56.2,
+    "rating": 0.8,
+    "stock": 123,
+    "brand": "7UP",
+    "backgroundColor": "#1F7A8C",
+    "thumbnail": "https://firebasestorage.googleapis.com/v0/b/solobebidasapp.appspot.com/o/7UP.png?alt=media&token=d09d3ca5-5c27-41d7-9ba3-5c74ef846238",
+    "images": [
+      "https://firebasestorage.googleapis.com/v0/b/solobebidasapp.appspot.com/o/7UP.png?alt=media&token=d09d3ca5-5c27-41d7-9ba3-5c74ef846238"
+    ]
+  }
+  
+]

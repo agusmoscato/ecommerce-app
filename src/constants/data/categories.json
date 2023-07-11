@@ -1,0 +1,26 @@
+[
+    {
+        "id": 1,
+        "name": "Cervezas",
+        "backgroundColor": "#EFA506",
+        "backgroundImage": "https://firebasestorage.googleapis.com/v0/b/solobebidasapp.appspot.com/o/Categorias%2Fcorona.png?alt=media&token=dccd261c-6763-4a5a-9eb7-ea731552f629"
+    },
+    {
+        "id": 2,
+        "name": "Aperitivos",
+        "backgroundColor": "#627264",
+        "backgroundImage": "https://firebasestorage.googleapis.com/v0/b/solobebidasapp.appspot.com/o/Categorias%2Ffernet.png?alt=media&token=64ca7c62-3b44-4e1f-ae6a-60ff8aae4274"
+    },
+    {
+        "id": 3,
+        "name": "Gaseosas",
+        "backgroundColor": "#1F7A8C",
+        "backgroundImage": "https://firebasestorage.googleapis.com/v0/b/solobebidasapp.appspot.com/o/Categorias%2Fpepsi.png?alt=media&token=f9b06b17-8d43-47fd-8597-3da0ad7fcec4"
+    },
+    {
+        "id": 4,
+        "name": "Bebidas Blancas",
+        "backgroundColor": "#995D81",
+        "backgroundImage": "https://firebasestorage.googleapis.com/v0/b/solobebidasapp.appspot.com/o/Categorias%2Fsmirnoff.png?alt=media&token=04ab13af-707f-46b4-8902-e0f61fd164fa"
+    } 
+]
