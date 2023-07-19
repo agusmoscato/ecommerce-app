@@ -1,11 +1,10 @@
 import { StyleSheet } from 'react-native';
 
-import { COLORS } from '../../themes';
-
 export const styles = StyleSheet.create({
   container: {
     flex: 1,
-    marginHorizontal: 20,
+    marginHorizontal: 15,
+    marginVertical: 20,
   },
   header: {
     flexDirection: 'row',
@@ -17,16 +16,16 @@ export const styles = StyleSheet.create({
     alignItems: 'center',
     paddingVertical: 10,
   },
-  goBackText: {
-    fontSize: 14,
-    color: COLORS.text,
-  },
-  products: {
-    flex: 1,
-  },
   notFound: {
     flex: 1,
     alignItems: 'center',
   },
   notFoundText: {},
+  products:{
+    flex:1,
+  },
+  productsContent: {
+    paddingVertical: 25,
+    gap: 15,
+  },
 });

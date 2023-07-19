@@ -7,7 +7,10 @@ import { Input, ProductItem } from '../../components';
 import PRODUCTS from '../../constants/data/products.json';
 import { COLORS } from '../../themes';
 
-function Product({ onHandleGoBack, categoryId }) {
+
+function Product({route,navigation}) {
+  const {categoryId} = route.params;
+
   const [search, setSearch] = useState('');
   const [borderColor, setBorderColor] = useState(COLORS.primary);
   const [filteredProducts, setFilteredProducts] = useState([]);
@@ -29,13 +32,12 @@ function Product({ onHandleGoBack, categoryId }) {
     });
     setFilteredProducts(updatedProductList);
   };
+  const onSelectProduct = ({ productId, name }) => {
+    navigation.navigate('Detalles del producto', { productId, name });
+  };
 
   return (
     <View style={styles.container}>
-      <TouchableOpacity style={styles.goBack} onPress={onHandleGoBack}>
-        <Ionicons name="arrow-back-circle" size={30} color={COLORS.black}/>
-        <Text style={styles.goBackText}>Volver a categorias</Text>
-      </TouchableOpacity>
       <View style={styles.header}>
         <Input
           onHandleBlur={onHandleBlur}
@@ -44,13 +46,17 @@ function Product({ onHandleGoBack, categoryId }) {
           value={search}
           placeholder="Buscar"
           borderColor={borderColor}
-        />
-        {search.length > 0 && <Ionicons name="close-circle" size={40} color={COLORS.black} onPress={deleteSearch}/>}
+          />
+          {search.length > 0 && <Ionicons name="close-circle" size={30} color={COLORS.black} onPress={deleteSearch}/>}
       </View>
       <FlatList
+        style={styles.products}
         data={search.length > 0 ? filteredProducts : filteredProductsByCategory}
-        renderItem={({ item }) =><ProductItem {...item}/>}
+        renderItem={({ item}) =><ProductItem {...item} onSelectProduct={onSelectProduct}/>}
+        contentContainerStyle={styles.productsContent}
         keyExtractor={(item) => item.id.toString()}
+        numColumns={1}
+        showsVerticalScrollIndicator={false}
       />
       {filteredProducts.length === 0 && search.length > 0 && (
         <View style={styles.notFound}>

@@ -3,21 +3,24 @@ import { View, TouchableHighlight, Image, Text } from 'react-native';
 import { styles } from './styles';
 import { COLORS } from '../../../themes';
 
-const ProductItem = ({ id, title, price, backgroundColor, thumbnail, onSelectCategory }) => {
+const ProductItem = ({id, title, price, backgroundColor, thumbnail, onSelectProduct }) => {
+  
   return (
     <TouchableHighlight
-      onPress={() => onSelectCategory(id)}
+      onPress={() => onSelectProduct({ productId: id, name: title })}
       style={styles.container}
       underlayColor={COLORS.primary}>
-      <View>
+      <View style={[styles.productContainer, {shadowColor:backgroundColor}]}>
         <Image
           source={ { uri: thumbnail } }
           style={styles.imageBackground}
-          resizeMode='contain'
+          resizeMethod="resize"
+          resizeMode="contain"
         />
-        <View style={[styles.textContainer, {backgroundColor}]}>
-        <Text style={styles.price}>${price}</Text>
+        <View style={[styles.textContainer, {}]}>
         <Text style={styles.text}>{title}</Text>
+        <Text style={styles.price}>${price}</Text>
+        <Text style={styles.addCart}>Agregar al carrito</Text>
         </View>
       </View>
     </TouchableHighlight>
@@ -25,3 +28,4 @@ const ProductItem = ({ id, title, price, backgroundColor, thumbnail, onSelectCat
 };
 
 export default ProductItem;
+
