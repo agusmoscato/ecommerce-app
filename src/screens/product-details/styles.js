@@ -1,6 +1,6 @@
 import { StyleSheet } from 'react-native';
 
-import { COLORS, FONTS } from '../../themes';
+import { COLORS } from '../../themes';
 
 export const styles = StyleSheet.create({
   container: {
@@ -63,5 +63,15 @@ export const styles = StyleSheet.create({
     color: COLORS.text,
     letterSpacing:4,
     paddingHorizontal: 6,    
+  },
+  containerButton:{
+    alignSelf:'center',
+    marginBottom: 20,
+    backgroundColor: COLORS.primary,
+    padding: 10,
+    borderRadius: 15,
+  },
+  addToCartText:{
+    color: COLORS.white,
   },
 });

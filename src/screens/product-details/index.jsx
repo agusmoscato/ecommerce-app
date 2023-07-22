@@ -1,11 +1,23 @@
-import { View, Text, Image, TouchableOpacity, Button } from 'react-native';
+import { View, Text, Image, TouchableOpacity } from 'react-native';
 
+
+import { useSelector, useDispatch } from 'react-redux';
 import { styles } from './styles';
-import PRODUCTS from '../../constants/data/products.json';
+
+import { addToCart } from '../../store/cart/cartSlice';
 
 function ProductDetail({ navigation, route }) {
   const { productId } = route.params;
-  const product = PRODUCTS.find((product) => product.id === productId);
+  const products = useSelector ((state) => state.products.data);
+  const product = products.find((product) => product.id === productId);
+
+  const dispatch = useDispatch();
+  const onAddToCart = () => {
+    dispatch(addToCart(product));
+  };
+
+  const priceDiscount = (product.price-product.price*(product.discountPercentage/100)).toFixed(0);
+
   return (
     <View style={styles.container}>
       <View style={styles.content}>
@@ -15,13 +27,14 @@ function ProductDetail({ navigation, route }) {
         <Image source={{ uri: product.thumbnail }} style={styles.image} resizeMode="contain" />
       </View>
         <Text style={styles.price}>$ {product.price}</Text>
-        <Text style={styles.priceDiscount}>$ {product.price-product.price*(product.discountPercentage/100)} <Text style={styles.offer}>{product.discountPercentage}% OFF</Text></Text>
+        <Text style={styles.priceDiscount}>$ {priceDiscount} <Text style={styles.offer}>{product.discountPercentage}% OFF</Text></Text>
         <Text style={styles.description}>{product.description}</Text>
       </View>
-      <Button
-        title='Agregar al Carrito'
-        color='green'
-        />
+      <View style={styles.containerButton}>
+          <TouchableOpacity onPress={onAddToCart}>
+            <Text style={styles.addToCartText}>Agregar al carrito</Text>
+          </TouchableOpacity>
+        </View>
     </View>
   );
 }

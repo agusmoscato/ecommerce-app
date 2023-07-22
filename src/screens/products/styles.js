@@ -1,4 +1,5 @@
 import { StyleSheet } from 'react-native';
+import {COLORS} from '../../themes';
 
 export const styles = StyleSheet.create({
   container: {
@@ -20,7 +21,14 @@ export const styles = StyleSheet.create({
     flex: 1,
     alignItems: 'center',
   },
-  notFoundText: {},
+  notFoundText: {
+      fontSize: 14,
+      color: COLORS.textGray,
+      letterSpacing:3,
+      padding: 6,
+      fontStyle: 'italic',
+      alignSelf:'center',
+  },
   products:{
     flex:1,
   },

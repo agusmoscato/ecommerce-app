@@ -1,5 +1,11 @@
 [
     {
+        "id": 0,
+        "name": "Todos los Productos",
+        "backgroundColor": "#49306B",
+        "backgroundImage": "https://firebasestorage.googleapis.com/v0/b/solobebidasapp.appspot.com/o/Categorias%2Fall.png?alt=media&token=865fad74-756f-4834-8456-f97978640b72"
+    },
+    {
         "id": 1,
         "name": "Cervezas",
         "backgroundColor": "#EFA506",

@@ -28,7 +28,7 @@ export const styles = StyleSheet.create({
     padding: 6,
     fontStyle: 'italic',
   },
-  addCart:{
+  masInfo:{
     fontSize: 14,
     color: COLORS.textGray,
     letterSpacing:3,
@@ -36,14 +36,27 @@ export const styles = StyleSheet.create({
     fontStyle: 'italic',
     alignSelf:'center',
   },
-  price:{
-    fontSize: 20,
-    color: COLORS.text,
-    letterSpacing:4,
-    padding: 6,    
-  },  
+  price: {
+    fontSize: 18,
+    color: COLORS.textGray,
+    letterSpacing: 4,
+    paddingHorizontal: 6, 
+    textDecorationLine: 'line-through'
+  }, 
   textContainer:{
     alignSelf:'center',
     alignItems: 'flex-end',
+  },
+  priceDiscount: {
+    fontSize: 20,
+    color: COLORS.text,
+    letterSpacing:4,
+    paddingHorizontal: 6,
+  },
+  offer: {
+    fontSize: 14,
+    color: 'green',
+    letterSpacing: 4,
+    paddingHorizontal: 6, 
   },
 });

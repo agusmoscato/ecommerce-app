@@ -7,7 +7,7 @@ const Stack = createNativeStackNavigator();
 
 function ShopNavigator(){
     return (
-        <Stack.Navigator initialRouteName="Categorias"
+      <Stack.Navigator initialRouteName="Categorias"
       screenOptions={() => ({
         headerStyle: {
           backgroundColor: COLORS.primary,
@@ -18,10 +18,9 @@ function ShopNavigator(){
         },
         headerTintColor: COLORS.white,
         animation: 'fade_from_bottom',
-      
       })}>
-            <Stack.Screen name="Categorias" component={Categories}/>
-            <Stack.Screen
+        <Stack.Screen name="Categorias" component={Categories}/>
+        <Stack.Screen
         name="Productos"
         component={Products}
         options={({ navigation, route }) => ({
@@ -53,6 +52,7 @@ const styles = StyleSheet.create({
   goBack: {
     flexDirection: 'row',
     alignItems: 'center',
+    marginRight: 20,
   },
   goBackText: {
     fontSize: 14,
