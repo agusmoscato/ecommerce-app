@@ -1,27 +1,29 @@
 import { Ionicons } from '@expo/vector-icons';
 import { View, Text, TouchableOpacity, Image } from 'react-native';
-import {useDispatch, useSelector} from 'react-redux'
+import {useSelector} from 'react-redux'
 import { styles } from './styles';
 import { COLORS } from '../../themes';
-import { incrementQuantity,decrementQuantity,removeFromCart } from '../../store/cart/cartSlice';
 
-const CartItem = ({ navigation, route , backgroundColor, id, categoryId, title, price,discountPercentage, thumbnail, quantity, stock, ...props }) => {
+const CartItem = ({ navigation,
+                    route,
+                    backgroundColor,
+                    id,
+                    categoryId,
+                    title,
+                    price,
+                    discountPercentage,
+                    thumbnail,
+                    quantity,
+                    stock,
+                    onIncrementQuantity,
+                    onDecrementQuantity,
+                    onRemoveFromCart,
+                    ...props }) => {
   const priceFinal = (price * quantity).toFixed(0);
   const priceDiscount = ((price-price*(discountPercentage/100))*quantity).toFixed(0);
 
-  
   const products = useSelector((state) => state.products.data);
   const product = products.find((product) => product.id === id);
-  const dispatch = useDispatch();
-  const onIncrementQuantity = () => {
-    dispatch(incrementQuantity(product));
-  };
-  const onDecrementQuantity = () => {
-    dispatch(decrementQuantity(product));
-  };
-  const onRemoveFromCart = () => {
-    dispatch(removeFromCart(product));
-  };
 
   return (
     <View style={styles.container}>
@@ -34,13 +36,13 @@ const CartItem = ({ navigation, route , backgroundColor, id, categoryId, title, 
         <Text style={styles.offer}>{discountPercentage}% <Text style={styles.price}>${priceFinal}</Text></Text>
         <Text style={styles.priceDiscount}>${priceDiscount}</Text>
         <View style={styles.actionContainer}>
-          <TouchableOpacity style={styles.increaseButton} onPress={onIncrementQuantity}>
+          <TouchableOpacity style={styles.increaseButton} onPress={() => onIncrementQuantity(product)}>
             <Text style={styles.increaseButtonText}>+</Text>
           </TouchableOpacity>
-          <TouchableOpacity style={styles.decreaseButton} onPress={onDecrementQuantity}>
+          <TouchableOpacity style={styles.decreaseButton} onPress={()=> onDecrementQuantity(product)}>
             <Text style={styles.decreaseButtonText}>-</Text>
           </TouchableOpacity>
-          <TouchableOpacity onPress={onRemoveFromCart} style={styles.deleteButton}>
+          <TouchableOpacity onPress={() => onRemoveFromCart(product)} style={styles.deleteButton}>
             <Ionicons name="trash" size={14} color={COLORS.white} />
           </TouchableOpacity>
         </View>

@@ -7,12 +7,12 @@ import { Input, ProductItem } from '../../components';
 import { COLORS } from '../../themes';
 
 import {useSelector} from 'react-redux';
-
+import { useGetProductsByCategoryQuery } from '../../store/products/api';
 
 function Product({route,navigation}) {
   const {categoryId} = route.params;
 
-  const products = useSelector ((state) => state.products.data);
+  const { data, error, isLoading } = useGetProductsByCategoryQuery(categoryId);
 
   const [search, setSearch] = useState('');
   const [borderColor, setBorderColor] = useState(COLORS.primary);
@@ -26,8 +26,6 @@ function Product({route,navigation}) {
 
   const deleteSearch = () =>{setSearch('')};
 
-  const filteredProductsByCategory = products.filter((product) => categoryId === 0 ? products : product.categoryId === categoryId);
-
   const filterBySearch =(query)=>{
     let updatedProductList = [...filteredProductsByCategory]
     updatedProductList = updatedProductList.filter((product) =>{
@@ -35,8 +33,9 @@ function Product({route,navigation}) {
     });
     setFilteredProducts(updatedProductList);
   };
-  const onSelectProduct = ({ productId, name }) => {
-    navigation.navigate('Detalles del producto', { productId, name });
+
+  const onSelectProduct = ({ productId }) => {
+    navigation.navigate('Detalles del producto', { productId });
   };
 
   return (
@@ -54,7 +53,7 @@ function Product({route,navigation}) {
       </View>
       <FlatList
         style={styles.products}
-        data={search.length > 0 ? filteredProducts : filteredProductsByCategory}
+        data={data}
         renderItem={({ item}) =><ProductItem {...item} onSelectProduct={onSelectProduct}/>}
         contentContainerStyle={styles.productsContent}
         keyExtractor={(item) => item.id.toString()}

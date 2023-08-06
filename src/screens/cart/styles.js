@@ -7,11 +7,12 @@ export const styles = StyleSheet.create({
   },
   listContainer: {
     flex: 1,
+    marginVertical: 10,
   },
   containerButton:{
     alignSelf:'center',
     margin: 15,
-    backgroundColor: COLORS.primary,
+    backgroundColor: COLORS.secondary,
     padding: 10,
     paddingHorizontal: 20,
     borderRadius: 15,
@@ -24,6 +25,7 @@ export const styles = StyleSheet.create({
     justifyContent: 'center',
     alignContent:'center',
     alignItems:'center',
+    
     margin: 20, 
   },
   notFoundTextTitle: {
@@ -34,17 +36,17 @@ export const styles = StyleSheet.create({
       fontStyle: 'italic',
       alignSelf:'center',
     },
-    notFoundTextDesc: {
-      fontSize: 14,
-      color: COLORS.textGray,
-      letterSpacing:3,
-      padding: 6,
-      fontStyle: 'italic',
-    },
-    priceTotal:{
-      fontSize: 18,
-      color: COLORS.text,
-      letterSpacing:2,   
-      alignSelf:'center',
+   notFoundTextDesc: {
+     fontSize: 14,
+     color: COLORS.textGray,
+     letterSpacing:3,
+     padding: 6,
+     fontStyle: 'italic',
+   },
+   priceTotal:{
+     fontSize: 18,
+     color: COLORS.text,
+     letterSpacing:2,   
+     alignSelf:'center',
   },
 });

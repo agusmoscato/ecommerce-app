@@ -17,6 +17,7 @@ export const styles = StyleSheet.create({
   imageBackground: {
     width: '100%',
     height: 150,
+    paddingVertical: 20,
     justifyContent: 'flex-end',
   },
   categoryName: {

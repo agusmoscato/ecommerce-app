@@ -1,12 +1,60 @@
-import { View ,FlatList,Text, TouchableOpacity,useState} from 'react-native';
-import { useSelector } from 'react-redux';
+import { View ,FlatList,Text, TouchableOpacity} from 'react-native';
+import { useSelector,useDispatch } from 'react-redux';
 
 import { styles } from './styles';
 import { CartItem } from '../../components';
 
-const Cart = () => {
+import { incrementQuantity,decrementQuantity,removeFromCart,clearCart } from '../../store/cart/cartSlice';
+import { useCreateOrderMutation } from '../../store/orders/api';
+
+
+const Cart = ({navigation}) => {
   const cart = useSelector((state) => state.cart.items);
   const totalCart = cart.reduce((total, item) => total + ((item.price-item.price*(item.discountPercentage/100))) * item.quantity, 0).toFixed(0);
+
+  
+  const dispatch = useDispatch();
+  const onIncrementQuantity = (id) => {
+    dispatch(incrementQuantity(id));
+  };
+  const onDecrementQuantity = (id) => {
+    dispatch(decrementQuantity(id));
+  };
+  const onRemoveFromCart = (id) => {
+    dispatch(removeFromCart(id));
+  };
+  
+  const [createOrder, {data, isError, error, isLoading}] = useCreateOrderMutation();
+   const onCreateOrder = async () => {
+    const nuevaOrden = {
+      id: Math.floor(Math.random() * 1000),
+      items: cart,
+      totalCart,
+      user: {
+        id:1,
+        name: 'Mr Nashe',
+        address: 'Calle 123',
+        phone: '123456789',
+        email: 'mrsNashe@123.com'
+      },
+      payment:{
+        method: 'VISA',
+      },
+      derivery:{
+        method: 'ANDREANI',
+        trackingNumber: Math.floor(Math.random() * 1000),
+      },
+      createAt: Date.now(),
+      finishedAt: '',
+    };
+    try {
+      await createOrder(nuevaOrden);
+      dispatch(clearCart());
+      navigation.navigate('OrdersTab');
+    } catch (e) {
+      console.warn({ error, e });
+    }
+  };
   return (
     <View style={styles.container}>
       {cart.length === 0 ? (
@@ -18,7 +66,11 @@ const Cart = () => {
         <View style={styles.container}>
           <FlatList
           data={cart}
-          renderItem={({ item }) => <CartItem {...item} />}
+          renderItem={({ item }) => <CartItem {...item} 
+          onIncrementQuantity={onIncrementQuantity}
+          onDecrementQuantity={onDecrementQuantity}
+          onRemoveFromCart={onRemoveFromCart}
+          />}
           keyExtractor={(item) => item.id.toString()}
           style={styles.listContainer}
           />
@@ -26,7 +78,7 @@ const Cart = () => {
           <Text style={styles.priceTotal}>Total: ${totalCart}</Text>
           </View>
           <View style={styles.containerButton}>
-            <TouchableOpacity onPress={()=>{}}>
+            <TouchableOpacity onPress={onCreateOrder}>
               <Text style={styles.addToCartText}>Comprar ahora</Text>
             </TouchableOpacity>
           </View>

@@ -67,11 +67,16 @@ export const styles = StyleSheet.create({
   containerButton:{
     alignSelf:'center',
     marginBottom: 20,
-    backgroundColor: COLORS.primary,
+    backgroundColor: COLORS.secondary,
     padding: 10,
     borderRadius: 15,
   },
   addToCartText:{
     color: COLORS.white,
+  },
+  containerLoader: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
   },
 });

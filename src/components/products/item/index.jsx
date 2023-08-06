@@ -19,7 +19,6 @@ const ProductItem = ({id, title, price, backgroundColor,discountPercentage, thum
         />
         <View style={[styles.textContainer, {}]}>
         <Text style={styles.text}>{title}</Text>
-        {/* <Text style={styles.price}>${price}</Text> */}
         <Text style={styles.priceDiscount}>${priceDiscount} <Text style={styles.offer}>{discountPercentage}% OFF</Text></Text>
         <Text style={styles.masInfo}>Mas informacion</Text>
         </View>
