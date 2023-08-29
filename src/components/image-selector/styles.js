@@ -4,8 +4,8 @@ import { COLORS } from '../../themes';
 
 export const styles = StyleSheet.create({
   container: {
-    width: 100,
-    height: 100,
+    width: 150,
+    height: 150,
     backgroundColor: COLORS.white,
     borderRadius: 50,
     shadowColor: '#000',
@@ -24,8 +24,8 @@ export const styles = StyleSheet.create({
     alignItems: 'center',
   },
   image: {
-    width: 100,
-    height: 100,
+    width: 150,
+    height: 150,
     borderRadius: 50,
   },
 });

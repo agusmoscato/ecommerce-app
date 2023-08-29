@@ -1,16 +1,20 @@
 import { Ionicons } from '@expo/vector-icons/';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { useSelector } from 'react-redux';
 
 import CartNavigator from './cart';
 import OrdersNavigator from './orders';
 import ShopNavigator from './shop';
+import PerfilNavigator from './settings';
 import { COLORS } from '../themes';
-import { useSelector } from 'react-redux';
 
+// Crear un navegador de pestañas inferior usando createBottomTabNavigator
 const BottomTab = createBottomTabNavigator();
 
 const TabsNavigator = () => {
+  // Obtener la cantidad de elementos en el carrito desde el estado usando useSelector
   const numberCartItem = useSelector((state) => state.cart.items);
+
   return (
     <BottomTab.Navigator
       initialRouteName="ShopTab"
@@ -46,7 +50,7 @@ const TabsNavigator = () => {
           tabBarIcon: ({ focused, color }) => (
             <Ionicons name={focused ? 'cart' : 'cart-outline'} size={20} color={color} />
           ),
-          tabBarBadge: numberCartItem.length,
+          tabBarBadge: numberCartItem.length, // Mostrar número de elementos en el carrito como un distintivo
           tabBarBadgeStyle: {
             backgroundColor: COLORS.primary,
             color: COLORS.white,
@@ -55,13 +59,13 @@ const TabsNavigator = () => {
         }}
       />
       <BottomTab.Screen
-        name="OrdersTab"
-        component={OrdersNavigator}
+        name="Perfil"
+        component={PerfilNavigator}
         options={{
-          tabBarLabel: 'Ordenes',
-          tabBarIcon: ({ focused, color }) => (
-            <Ionicons name={focused ? 'file-tray' : 'file-tray-outline'} size={20} color={color} />
-          ),
+          tabBarLabel: 'Perfil',
+          tabBarIcon: ({ focused, color }) => {
+            return <Ionicons name="person" size={30} color={color} />;
+          },
         }}
       />
     </BottomTab.Navigator>

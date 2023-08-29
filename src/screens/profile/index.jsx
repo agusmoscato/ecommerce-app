@@ -1,30 +1,74 @@
-import { ActivityIndicator, View } from 'react-native';
+import React, { useEffect, useState } from 'react';
+import { View, Text, TextInput, Image, ActivityIndicator } from 'react-native';
 import { useSelector } from 'react-redux';
-
 import { styles } from './styles';
-import { ImageSelector } from '../../components';
-import { useGetProfileQuery, useUpdateImageProfileMutation } from '../../store/settings/api';
+import { useGetProfileQuery } from '../../store/settings/api';
 import { COLORS } from '../../themes';
 
+/**
+ * Componente que muestra el perfil del usuario.
+ * Muestra la información del usuario, incluyendo su nombre, apellido, dirección y foto de perfil.
+ */
 const Profile = () => {
   const localId = useSelector((state) => state.auth.user.localId);
-  const [uploadImageProfile, { data, isLoading, error }] = useUpdateImageProfileMutation();
   const { data: userData, isLoading: isLoadingUserData } = useGetProfileQuery({ localId });
-  const onHandlerImage = async ({ uri, base64 }) => {
-    await uploadImageProfile({ localId, image: `data:image/jpeg;base64,${base64}` });
-  };
 
-  console.warn({ userData, isLoadingUserData });
+  const [name, setName] = useState(userData?.name || '');
+  const [surname, setSurname] = useState(userData?.surname || '');
+  const [address, setAddress] = useState(userData?.address || '');
+
+  // Actualiza los estados al cargar los datos del usuario
+  useEffect(() => {
+    if (userData) {
+      setName(userData.name || '');
+      setSurname(userData.surname || '');
+      setAddress(userData.address || '');
+    }
+  }, [userData]);
+
+  // Refetch de la consulta de perfil al montar o al cambiar el argumento
+  useGetProfileQuery({ localId }, {
+    refetchOnMountOrArgChange: true,
+    onSettled: (data) => {
+      setName(data?.name || '');
+      setSurname(data?.surname || '');
+      setAddress(data?.address || '');
+    },
+  });
+
   return (
     <View style={styles.container}>
-      {/* <View style={styles.header}> */}
-        <ImageSelector profileImage={userData?.profileImage} onSelect={onHandlerImage}/>
-        {isLoading && (
-          <View style={styles.loading}>
-            <ActivityIndicator size="large" color={COLORS.primary} />
-          </View>
-        )}
-      {/* </View> */}
+      {isLoadingUserData && (
+        <View style={styles.loading}>
+          <ActivityIndicator size="large" color={COLORS.primary} />
+        </View>
+      )}
+      <Image
+        source={{ uri: userData?.profileImage }}
+        style={styles.imageBackground}
+        resizeMethod="resize"
+        resizeMode="contain"
+      />
+      <View style={styles.infoContainer}>
+          <Text>Nombre:</Text>
+          <TextInput
+            style={styles.input}
+            editable={false}
+            value={name}
+          />  
+          <Text>Apellido:</Text>
+          <TextInput
+            style={styles.input}
+            editable={false}
+            value={surname}
+          />
+          <Text>Dirección:</Text>
+          <TextInput
+            style={styles.input}
+            editable={false}
+            value={address}
+          />
+      </View>
     </View>
   );
 };

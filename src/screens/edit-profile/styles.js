@@ -18,10 +18,15 @@ export const styles = StyleSheet.create({
     width: 250,
     marginVertical: 10,
   },
-  imageBackground:{
-    width: 150,
-    height: 150,
-    borderRadius: 50,
+  containerButton:{
+    alignSelf:'center',
+    backgroundColor: COLORS.secondary,
+    padding: 10,
+    paddingHorizontal: 20,
+    borderRadius: 15,
+  },
+  btnText:{
+    color: COLORS.white,
   },
   infoContainer:{
     marginVertical: 30,

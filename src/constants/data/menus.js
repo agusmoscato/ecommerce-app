@@ -2,19 +2,19 @@ export const MENUS = [
     {
       id: '1',
       icon: 'ios-person-sharp',
-      route: 'FotoPerfil',
-      title: 'Foto de Perfil',
+      route: 'Informacion del Usuario',
+      title: 'Informacion del Usuario',
     },
     {
       id: '2',
-      icon: 'ios-location-sharp',
-      route: 'Direccion',
-      title: 'Direccion',
+      icon: 'create-outline',
+      route: 'Editar Informacion del Usuario',
+      title: 'Editar Informacion del Usuario',
     },
     {
       id: '3',
-      icon: 'card-outline',
-      route: 'Metodos De Pago',
-      title: 'Metodos De Pago',
+      icon: 'basket',
+      title: 'Ordenes',
+      route: 'Ordenes',
     },
   ];

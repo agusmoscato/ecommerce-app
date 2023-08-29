@@ -25,8 +25,7 @@ export const styles = StyleSheet.create({
     justifyContent: 'center',
     alignContent:'center',
     alignItems:'center',
-    
-    margin: 20, 
+    marginHorizontal: 20, 
   },
   notFoundTextTitle: {
       fontSize: 18,
@@ -34,7 +33,7 @@ export const styles = StyleSheet.create({
       letterSpacing:3,
       padding: 6,
       fontStyle: 'italic',
-      alignSelf:'center',
+      
     },
    notFoundTextDesc: {
      fontSize: 14,
@@ -42,6 +41,8 @@ export const styles = StyleSheet.create({
      letterSpacing:3,
      padding: 6,
      fontStyle: 'italic',
+     textAlign: 'center',
+     
    },
    priceTotal:{
      fontSize: 18,
