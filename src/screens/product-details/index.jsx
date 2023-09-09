@@ -37,9 +37,15 @@ function ProductDetail({ route }) {
 
   // Calcular el precio con descuento
   const priceDiscount = (product.price - product.price * (product.discountPercentage / 100)).toFixed(0);
-
-  return (
-    <View style={styles.container}>
+  if (isLoading) {
+    return (
+      <View style={styles.containerLoader}>
+        <ActivityIndicator size="large" color={COLORS.primary} />
+      </View>
+    );
+  } else {
+    return (
+      <View style={styles.container}>
       <View style={styles.content}>
         <Text style={styles.name}>{product.title}</Text>
         <Text style={[styles.category, { color: product.backgroundColor }]}>▣{product.categoryName}</Text>
@@ -57,6 +63,7 @@ function ProductDetail({ route }) {
       </View>
     </View>
   );
+}
 }
 
 export default ProductDetail;

@@ -28,6 +28,7 @@ export const styles = StyleSheet.create({
       padding: 6,
       fontStyle: 'italic',
       alignSelf:'center',
+      alignContent: 'center',
   },
   products:{
     flex:1,

@@ -1,3 +1,8 @@
+import { View, Image, Text, TouchableOpacity } from "react-native";
+import { Ionicons } from '@expo/vector-icons';
+import {styles} from "./styles";
+import { COLORS } from "../../themes";
+
 /**
  * Componente CartItem
  *
@@ -18,10 +23,10 @@
  * @param {Function} props.onRemoveFromCart - Función para remover el producto del carrito.
  * @returns {JSX.Element} - Elemento JSX que muestra los detalles de un producto en el carrito.
  */
+
 const CartItem = ({
   backgroundColor,
   id,
-  categoryId,
   title,
   price,
   discountPercentage,
@@ -36,10 +41,6 @@ const CartItem = ({
   const priceFinal = (price * quantity).toFixed(0);
   const priceDiscount = ((price - price * (discountPercentage / 100)) * quantity).toFixed(0);
 
-  // Obtener datos de productos desde el estado global
-  const products = useSelector((state) => state.products.data);
-  const product = products.find((product) => product.id === id);
-
   return (
     <View style={styles.container}>
       <View style={[styles.imageContainer, { backgroundColor: backgroundColor }]}>
@@ -51,13 +52,13 @@ const CartItem = ({
         <Text style={styles.offer}>{`${discountPercentage}% descuento`} <Text style={styles.price}>${priceFinal}</Text></Text>
         <Text style={styles.priceDiscount}>${priceDiscount}</Text>
         <View style={styles.actionContainer}>
-          <TouchableOpacity style={styles.increaseButton} onPress={() => onIncrementQuantity(product)}>
+          <TouchableOpacity style={styles.increaseButton} onPress={() => onIncrementQuantity(id)}>
             <Text style={styles.increaseButtonText}>+</Text>
           </TouchableOpacity>
-          <TouchableOpacity style={styles.decreaseButton} onPress={() => onDecrementQuantity(product)}>
+          <TouchableOpacity style={styles.decreaseButton} onPress={() => onDecrementQuantity(id)}>
             <Text style={styles.decreaseButtonText}>-</Text>
           </TouchableOpacity>
-          <TouchableOpacity onPress={() => onRemoveFromCart(product)} style={styles.deleteButton}>
+          <TouchableOpacity onPress={() => onRemoveFromCart(id)} style={styles.deleteButton}>
             <Ionicons name="trash" size={14} color={COLORS.white} />
           </TouchableOpacity>
         </View>

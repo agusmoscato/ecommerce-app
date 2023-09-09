@@ -8,6 +8,10 @@
  * @param {function} onSelectCategory - Función para manejar la selección de la categoría.
  * @returns {JSX.Element} Componente de ítem de categoría.
  */
+import { TouchableHighlight, ImageBackground, Text } from "react-native";
+import { styles } from "./styles";
+import { COLORS } from "../../../themes";
+
 const CategoryItem = ({ id, name, backgroundColor, backgroundImage, onSelectCategory }) => {
   return (
     <TouchableHighlight

@@ -21,7 +21,7 @@ const cartSlice = createSlice({
       );
       if (itemInCart && itemInCart.quantity < itemInCart.stock) {
         itemInCart.quantity += 1;
-      } else if (!itemInCart || (itemInCart.quantity < itemInCart.stock)) {
+      } else if (!(itemInCart)||(itemInCart.quantity < itemInCart.stock)){
         state.items.push(action.payload);
       }
     },

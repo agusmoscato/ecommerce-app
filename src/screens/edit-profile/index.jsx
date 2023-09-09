@@ -72,7 +72,26 @@ const EditProfile = ({ navigation }) => {
           onChangeText={(text) => setName(text)}
           value={name}
         />
-        {/* Repetir para los campos de apellido y dirección */}
+        <Text>Apellido:</Text>
+          <TextInput
+            style={styles.input}
+            placeholder="Nuevo apellido"
+            placeholderTextColor={COLORS.gray}
+            autoCapitalize="none"
+            autoCorrect={false}
+            onChangeText={(text) => setName(text)}
+            value={surname}
+          />
+          <Text>Dirección:</Text>
+          <TextInput
+            style={styles.input}
+            placeholder="Nueva direccion"
+          placeholderTextColor={COLORS.gray}
+          autoCapitalize="none"
+          autoCorrect={false}
+          onChangeText={(text) => setName(text)}
+            value={address}
+          />
       </View>
       <View style={styles.containerButton}>
         <TouchableOpacity onPress={onHandlerData}>

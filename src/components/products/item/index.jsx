@@ -22,7 +22,7 @@ const ProductItem = ({ id, title, price, backgroundColor, discountPercentage, th
 
   return (
     <TouchableHighlight
-      onPress={() => onSelectProduct({ productId: id, name: title })}
+      onPress={() => onSelectProduct({ productId: id })}
       style={styles.container}
       underlayColor={COLORS.primary}>
       <View style={[styles.productContainer, { shadowColor: backgroundColor }]}>

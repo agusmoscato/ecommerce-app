@@ -1,6 +1,6 @@
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
-import { Cart } from '../screens';
+import { Cart, Orders } from '../screens';
 import { COLORS } from '../themes';
 
 // Crear una instancia del StackNavigator
@@ -32,7 +32,8 @@ const CartNavigator = () => {
       })}
     >
       {/* Definir la pantalla "Carrito" */}
-      <Stack.Screen name="Carrito" component={Cart} />
+      <Stack.Screen name="Carrito de compras" component={Cart} />
+      <Stack.Screen name="Ordenes" component={Orders} />
     </Stack.Navigator>
   );
 };

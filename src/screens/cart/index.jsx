@@ -28,17 +28,17 @@ const Cart = ({ navigation }) => {
 
   // Función para incrementar la cantidad de un producto en el carrito
   const onIncrementQuantity = (id) => {
-    dispatch(incrementQuantity(id));
+    dispatch(incrementQuantity({id}));
   };
 
   // Función para decrementar la cantidad de un producto en el carrito
   const onDecrementQuantity = (id) => {
-    dispatch(decrementQuantity(id));
+    dispatch(decrementQuantity({id}));
   };
 
   // Función para eliminar un producto del carrito
   const onRemoveFromCart = (id) => {
-    dispatch(removeFromCart(id));
+    dispatch(removeFromCart({id}));
   };
 
   // Obtener el ID del usuario local

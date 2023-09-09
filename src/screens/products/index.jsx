@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, Text, FlatList } from 'react-native';
+import { View, Text, FlatList, ActivityIndicator } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 
 import { styles } from './styles';
@@ -22,7 +22,7 @@ function Product({ route, navigation }) {
   // Utilizamos la consulta de la API para obtener los productos por categoría.
   const { data, error, isLoading } = useGetProductsByCategoryQuery(categoryId);
 
-  // Estado para gestionar la búsqueda de productos.
+;  // Estado para gestionar la búsqueda de productos.
   const [search, setSearch] = useState('');
   const [borderColor, setBorderColor] = useState(COLORS.primary);
   const [filteredProducts, setFilteredProducts] = useState([]);
@@ -38,13 +38,14 @@ function Product({ route, navigation }) {
   // Función para borrar el texto de búsqueda.
   const deleteSearch = () => {
     setSearch('');
+    setFilteredProducts([...data]);
   };
 
   // Función para filtrar productos por búsqueda.
-  const filterBySearch = (query) => {
-    let updatedProductList = [...filteredProductsByCategory];
-    updatedProductList = updatedProductList.filter((product) => {
-      return product.title.toLowerCase().indexOf(query.toLowerCase()) !== -1;
+  const filterBySearch =(query)=>{
+    let updatedProductList = [...data];
+    updatedProductList = updatedProductList.filter((product) =>{
+      return (product.title.toLowerCase().indexOf(query.toLowerCase())!== -1)
     });
     setFilteredProducts(updatedProductList);
   };
@@ -54,8 +55,15 @@ function Product({ route, navigation }) {
     navigation.navigate('Detalles del producto', { productId });
   };
 
-  return (
-    <View style={styles.container}>
+  if (isLoading) {
+    return (
+      <View style={styles.containerLoader}>
+        <ActivityIndicator size="large" color={COLORS.primary} />
+      </View>
+    );
+  }else{
+    return (
+      <View style={styles.container}>
       <View style={styles.header}>
         {/* Input de búsqueda */}
         <Input
@@ -65,7 +73,7 @@ function Product({ route, navigation }) {
           value={search}
           placeholder="Buscar"
           borderColor={borderColor}
-        />
+          />
         {/* Icono para borrar la búsqueda */}
         {search.length > 0 && (
           <Ionicons
@@ -73,29 +81,31 @@ function Product({ route, navigation }) {
             size={30}
             color={COLORS.black}
             onPress={deleteSearch}
-          />
-        )}
+            />
+            )}
       </View>
       {/* Lista de productos */}
-      <FlatList
-        style={styles.products}
-        data={data}
-        renderItem={({ item }) => (
-          <ProductItem {...item} onSelectProduct={onSelectProduct} />
-        )}
-        contentContainerStyle={styles.productsContent}
-        keyExtractor={(item) => item.id.toString()}
-        numColumns={1}
-        showsVerticalScrollIndicator={false}
-      />
-      {/* Mensaje si no se encuentran productos */}
-      {filteredProducts.length === 0 && search.length > 0 && (
+      {filteredProducts.length === 0 && search.length > 0 ?
+      (
         <View style={styles.notFound}>
           <Text style={styles.notFoundText}>No se han encontrado productos</Text>
         </View>
+      ) :(
+          <FlatList
+          style={styles.products}
+          data={filteredProducts.length === 0 ? data : filteredProducts}
+          renderItem={({ item }) => (
+          <ProductItem {...item} onSelectProduct={onSelectProduct} />
+        )}
+      contentContainerStyle={styles.productsContent}
+      keyExtractor={(item) => item.id.toString()}
+      numColumns={1}
+      showsVerticalScrollIndicator={false}
+      />
       )}
     </View>
   );
+}
 }
 
 export default Product;
